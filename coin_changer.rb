@@ -5,7 +5,22 @@ def get_change(cents_received)
 	puts "Amount given is #{cents_received}"
 	amount_given = cents_received
 
+
+
+coins.each do |coin, value|
+	if cents_received >= 0
+	coins_returned[coin] = cents_received / value
+	cents_received = cents_received - coin[value]
+	end
+	puts coins_returned
+	
+end 
+
+puts "#{amount_given} amounts to #{coins_returned[quarter]} quarters 
+and #{coins_returned[dime]} dimes 
+and #{coins_returned[nickel]} nickels and #{coins_returned[penny]} pennies"
+
 end
 
-get_change(50)
+get_change(66)
 
